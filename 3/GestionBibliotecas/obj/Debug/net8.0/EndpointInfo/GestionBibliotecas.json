@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "GestionBibliotecas",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Library/add": {
+      "post": {
+        "tags": [
+          "Library"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Library/get": {
+      "get": {
+        "tags": [
+          "Library"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LibraryRequest": {
+        "type": "object",
+        "properties": {
+          "libraryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "libraryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

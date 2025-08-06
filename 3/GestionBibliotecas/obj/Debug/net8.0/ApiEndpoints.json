@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "addLibrary",
+    "RelativePath": "api/Library/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Library.LibraryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "GetLibraries",
+    "RelativePath": "api/Library/get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
