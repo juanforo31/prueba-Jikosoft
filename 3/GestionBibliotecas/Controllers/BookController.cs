@@ -1,5 +1,4 @@
 ﻿using GestionBibliotecas.Application.Bussiness;
-using GestionBibliotecas.Application.DTOs.Library;
 using GestionBibliotecas.Application.DTOs.Books;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,30 +6,31 @@ namespace GestionBibliotecas.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    
+    public class BookController: ControllerBase
     {
         // Se genera este objeto con su respectivo constructor, ya que para esta ocación es necesario hacer uso de un Singleton para mantener la información en momoria, al no tener DB
         // Se puede ver el Singleton implementado en Program.cs
-        private readonly UserBO _user;
+        private readonly BooksBO _book;
 
-        public UserController(UserBO service)
+        public BookController(BooksBO service)
         {
-            _user = service;
+            _book = service;
         }
 
         /// <summary>
         /// Obtiene todos los libros de todas las bibliotecas.
         /// </summary>
         [HttpGet]
-        [Route("get-users")]
-        public async Task<IActionResult> GetUsers()
+        [Route("get-books")]
+        public async Task<IActionResult> GetBooks()
         {
             try
             {
-                var resultado = await _user.GetAllUsers();
+                var resultado = await _book.GetAllBooks();
                 if (resultado == null || !resultado.Any())
                 {
-                    return Ok("No se han encontrado miembros");
+                    return Ok("No se han encontrado libros");
                 }
                 else
                 {
@@ -48,22 +48,22 @@ namespace GestionBibliotecas.Controllers
         /// Obtiene los libros un dado un filtro.
         /// </summary>
         [HttpPost]
-        [Route("get-user-filter")]
-        public async Task<IActionResult> GetBooksByFilter([FromBody] UserRequest userRequest)
+        [Route("get-book-filter")]
+        public async Task<IActionResult> GetBooksByFilter([FromBody] BookRequest bookRequest)
         {
             try
             {
 
-                var resultado = await _user.GetUser(userRequest);
-                var user = resultado.Item1;
-                bool existsUser = resultado.Item2;
-                if (existsUser)
+                var resultado = await _book.GetBook(bookRequest);
+                var book = resultado.Item1;
+                bool existsBook = resultado.Item2;
+                if (existsBook)
                 {
-                    return Ok(user);
+                    return Ok(book);
                 }
                 else
                 {
-                    return Ok("No se ha encontrado ningun mienbro con los datos proporcionados");
+                    return Ok("No se ha encontrado ningún miembro con los datos proporcionados");
                 }
 
             }
@@ -77,16 +77,16 @@ namespace GestionBibliotecas.Controllers
         /// Obtiene los libros una biblioteca en específico.
         /// </summary>
         [HttpPost]
-        [Route("get-user-library")]
+        [Route("get-book-library")]
         public async Task<IActionResult> GetBooksByLibrary(int libraryId)
         {
             try
             {
 
-                var resultado = await _user.GetAllUsersByLibrary(libraryId);
+                var resultado = await _book.GetAllBooksByLibrary(libraryId);
                 if (resultado == null || !resultado.Any())
                 {
-                    return Ok("Ha ocurrido un error encontrando la biblioteca o el miembro");
+                    return Ok("Ha ocurrido un error encontrando la biblioteca o el libro");
                 }
                 else
                 {
@@ -101,23 +101,23 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Añade un miembro.
+        /// Añade un libro.
         /// </summary>
         [HttpPost]
-        [Route("add-user")]
-        public async Task<IActionResult> addUser([FromBody] NewUserRequest newUserRequest)
+        [Route("add-book")]
+        public async Task<IActionResult> addBook([FromBody] NewBookRequest newBookRequest)
         {
             try
             {
-                int resultado = await _user.AddUser(newUserRequest);
+                int resultado = await _book.AddBook(newBookRequest);
 
                 if (resultado != 0)
                 {
-                    return Ok($"Miembro agregado correctamente con el identificador " + resultado);
+                    return Ok($"El libro ha sido agregado correctamente con el identificador " + resultado);
                 }
                 else
                 {
-                    return Ok("No se pudo crear el miembro");
+                    return Ok("No se pudo crear el libro");
                 }
             }
             catch (Exception e)
@@ -126,23 +126,23 @@ namespace GestionBibliotecas.Controllers
             }
         }
         /// <summary>
-        /// modifica un miembro.
+        /// modifica un libro.
         /// </summary>
         [HttpPut]
-        [Route("update-user/{userId}")]
-        public async Task<IActionResult> UpdateUser(int userId, [FromBody] ModUserRequest modUserRequest)
+        [Route("update-book/{bookId}")]
+        public async Task<IActionResult> UpdateBook(int bookId, [FromBody] ModBookRequest modBookRequest)
         {
             try
             {
-                bool resultado = await _user.UpdateUser(userId, modUserRequest);
+                bool resultado = await _book.UpdateBook(bookId, modBookRequest);
 
                 if (resultado)
                 {
-                    return Ok("El miembro se ha modificado con éxito");
+                    return Ok("El libro se ha modificado con éxito");
                 }
                 else
                 {
-                    return Ok("No se pudo modificar el miembro");
+                    return Ok("No se pudo modificar el libro");
                 }
             }
             catch (Exception e)
@@ -150,25 +150,25 @@ namespace GestionBibliotecas.Controllers
                 return BadRequest(e.Message);
             }
         }
-        
+
         /// <summary>
-        /// modifica un la biblioteca de un miembro.
+        /// Se renta un libro a un usuario
         /// </summary>
         [HttpPut]
-        [Route("update-user-library/{userId}/{libraryId}")]
-        public async Task<IActionResult> UpdateUserLibrary(int userId, int libraryId)
+        [Route("rent-book-user/{userId}/{bookId}")]
+        public async Task<IActionResult> rentBook(int userId, int bookId)
         {
             try
             {
-                bool resultado = await _user.UpdateLibraryUser(userId, libraryId);
+                bool resultado = await _book.RentBook(userId, bookId);
 
                 if (resultado)
                 {
-                    return Ok("Se ha realizado el tralado del miembro satisfactoriamente");
+                    return Ok("Se ha realizado la renta del libro de manera exitosa");
                 }
                 else
                 {
-                    return Ok($"No se pudo trasladar el usuario a la biblioteca con identificación" + libraryId);
+                    return Ok($"No se pudo realizar la renta del libro " + bookId);
                 }
             }
             catch (Exception e)
@@ -178,19 +178,45 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Eliminar un miembro.
+        /// Se devuelve un libro a la biblioteca
+        /// </summary>
+        [HttpPut]
+        [Route("return-book-user/{bookId}")]
+        public async Task<IActionResult> returnBook(int userId, int bookId)
+        {
+            try
+            {
+                bool resultado = await _book.ReturnBook(bookId);
+
+                if (resultado)
+                {
+                    return Ok("Se ha realizado devuelto el libro de manera exitosa");
+                }
+                else
+                {
+                    return Ok($"No se pudo realizar la devoluci devoluciòn del libro " + bookId);
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Eliminar un libro.
         /// </summary>
         [HttpDelete]
-        [Route("delete-user/{userId}")]
-        public async Task<IActionResult> DeleteUser(int userId)
+        [Route("delete-/{bookId}")]
+        public async Task<IActionResult> DeleteBook(int bookId)
         {
             try
             {
-                bool resultado = await _user.DeleteUser(userId);
+                bool resultado = await _book.DeleteBook(bookId);
 
                 if (resultado)
                 {
-                    return Ok("El miembro se ha eliminado con éxito");
+                    return Ok("El libro se ha eliminado con éxito");
                 }
                 else
                 {

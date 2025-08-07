@@ -1,4 +1,4 @@
-﻿using GestionBibliotecas.Application.DTOs.Users;
+﻿using GestionBibliotecas.Application.DTOs.Books;
 
 namespace GestionBibliotecas.Domain.Interfaces
 {
@@ -11,7 +11,7 @@ namespace GestionBibliotecas.Domain.Interfaces
         Task<(IEnumerable<UserResponse>, bool)> GetUser(UserRequest userRequest);
 
         /// <summary>
-        /// Obtiene todos los miembros.
+        /// Obtiene todos los libros.
         /// </summary>
         Task<IEnumerable<UserResponse>> GetAllUsers();
         /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace GestionBibliotecas.Application.DTOs.Users
+﻿namespace GestionBibliotecas.Application.DTOs.Books
 {
     public class ModUserRequest
     {

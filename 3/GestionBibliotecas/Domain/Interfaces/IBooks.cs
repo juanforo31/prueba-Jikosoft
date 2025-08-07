@@ -8,7 +8,7 @@ namespace GestionBibliotecas.Domain.Interfaces
         /// <summary>
         /// Obtiene un libro dado un filtro.
         /// </summary>
-        Task<(BookResponse?,bool)> GetBook(BookRequest bookRequest);
+        Task<(IEnumerable<BookResponse?>,bool)> GetBook(BookRequest bookRequest);
         /// <summary>
         /// Obtiene todos los libros.
         /// </summary>
@@ -30,6 +30,11 @@ namespace GestionBibliotecas.Domain.Interfaces
         /// Vincular el libro a un usuario.
         /// </summary>
         Task<bool> RentBook(int bookId, int userId);
+
+        /// <summary>
+        /// Hacer ela devolución del libro a la biblioteca.
+        /// </summary>
+        Task<bool> ReturnBook(int bookId);
 
         /// <summary>
         /// Elimina un libro.

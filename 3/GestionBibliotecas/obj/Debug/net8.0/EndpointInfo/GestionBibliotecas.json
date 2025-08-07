@@ -5,6 +5,238 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Book/get-books": {
+      "get": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Obtiene todos los libros de todas las bibliotecas.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/get-book-filter": {
+      "post": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Obtiene los libros un dado un filtro.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/BookRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/get-book-library": {
+      "post": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Obtiene los libros una biblioteca en específico.",
+        "parameters": [
+          {
+            "name": "libraryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/add-book": {
+      "post": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Añade un libro.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBookRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBookRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBookRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/update-book/{bookId}": {
+      "put": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "modifica un libro.",
+        "parameters": [
+          {
+            "name": "bookId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModBookRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModBookRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModBookRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/rent-book-user/{userId}/{bookId}": {
+      "put": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Se renta un libro a un usuario",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "bookId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/return-book-user/{bookId}": {
+      "put": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Se devuelve un libro a la biblioteca",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "bookId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Book/delete-/{bookId}": {
+      "delete": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Eliminar un libro.",
+        "parameters": [
+          {
+            "name": "bookId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Library/get-libraries": {
       "get": {
         "tags": [
@@ -154,7 +386,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Obtiene todos los miembros de todas las bibliotecas.",
+        "summary": "Obtiene todos los libros de todas las bibliotecas.",
         "responses": {
           "200": {
             "description": "OK"
@@ -167,7 +399,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Obtiene los miembros un dado un filtro.",
+        "summary": "Obtiene los libros un dado un filtro.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -199,7 +431,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Obtiene los miembros una biblioteca en específico.",
+        "summary": "Obtiene los libros una biblioteca en específico.",
         "parameters": [
           {
             "name": "libraryId",
@@ -352,6 +584,48 @@
   },
   "components": {
     "schemas": {
+      "BookRequest": {
+        "type": "object",
+        "properties": {
+          "bookId": {
+            "type": "integer",
+            "description": "Identifiacdor del libro.",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string",
+            "description": "Título del libro",
+            "nullable": true
+          },
+          "author": {
+            "type": "string",
+            "description": "Autor del libro.",
+            "nullable": true
+          },
+          "isbn": {
+            "type": "string",
+            "description": "ISBN del libro.",
+            "nullable": true
+          },
+          "publishedYear": {
+            "type": "integer",
+            "description": "Año de publicación.",
+            "format": "int32"
+          },
+          "libraryId": {
+            "type": "integer",
+            "description": "Identificador de la biblioteca donde está.",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "Identificador de la persona que tiene el libro.",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LibraryRequest": {
         "type": "object",
         "properties": {
@@ -370,6 +644,32 @@
             "type": "string",
             "description": "Dirección de la biblioteca",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModBookRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Título del libro",
+            "nullable": true
+          },
+          "author": {
+            "type": "string",
+            "description": "Autor del libro.",
+            "nullable": true
+          },
+          "isbn": {
+            "type": "string",
+            "description": "ISBN del libro.",
+            "nullable": true
+          },
+          "publishedYear": {
+            "type": "integer",
+            "description": "Año de publicación.",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -424,6 +724,37 @@
             "type": "string",
             "description": "Teléfono del usuario.",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewBookRequest": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Título del libro",
+            "nullable": true
+          },
+          "author": {
+            "type": "string",
+            "description": "Autor del libro.",
+            "nullable": true
+          },
+          "isbn": {
+            "type": "string",
+            "description": "ISBN del libro.",
+            "nullable": true
+          },
+          "publishedYear": {
+            "type": "integer",
+            "description": "Año de publicación.",
+            "format": "int32"
+          },
+          "libraryId": {
+            "type": "integer",
+            "description": "Indeitificador de la libreria",
+            "format": "int32"
           }
         },
         "additionalProperties": false

@@ -1,7 +1,7 @@
 ﻿using GestionBibliotecas.Application.Bussiness;
 using GestionBibliotecas.Application.DTOs;
 using GestionBibliotecas.Application.DTOs.Library;
-using GestionBibliotecas.Application.DTOs.Users;
+using GestionBibliotecas.Application.DTOs.Books;
 
 namespace GestionBibliotecas.Infrastructure.MemoryData
 {

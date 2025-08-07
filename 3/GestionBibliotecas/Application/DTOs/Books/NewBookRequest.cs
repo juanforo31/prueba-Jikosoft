@@ -21,5 +21,10 @@
         /// Año de publicación.
         /// </summary>
         public int PublishedYear { get; set; }
+
+        /// <summary>
+        /// Indeitificador de la libreria
+        /// </summary>
+        public int libraryId { get; set; }
     }
 }
