@@ -1,0 +1,366 @@
+[
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "addBook",
+    "RelativePath": "api/Book/add-book",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newBookRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Books.NewBookRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "DeleteBook",
+    "RelativePath": "api/Book/delete-/{bookId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "GetBooksByFilter",
+    "RelativePath": "api/Book/get-book-filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Books.BookRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "GetBookById",
+    "RelativePath": "api/Book/get-book-id/{bookId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "GetBooksByLibrary",
+    "RelativePath": "api/Book/get-book-library/{libraryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "GetBooks",
+    "RelativePath": "api/Book/get-books",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "rentBook",
+    "RelativePath": "api/Book/rent-book-user/{userId}/{bookId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "returnBook",
+    "RelativePath": "api/Book/return-book-user/{bookId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.BookController",
+    "Method": "UpdateBook",
+    "RelativePath": "api/Book/update-book/{bookId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modBookRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Books.ModBookRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "AddLibrary",
+    "RelativePath": "api/Library/add-library",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newlibraryRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "DeleteLibrary",
+    "RelativePath": "api/Library/delete-library/{libraryId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "GetLibraries",
+    "RelativePath": "api/Library/get-libraries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "GetLibrary",
+    "RelativePath": "api/Library/get-library",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Library.LibraryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "UpdateLibrary",
+    "RelativePath": "api/Library/update-library/{libraryId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modLibraryRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "addUser",
+    "RelativePath": "api/User/add-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUserRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Books.NewUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/User/delete-user/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "GetUsersByFilter",
+    "RelativePath": "api/User/get-user-filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Books.UserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "GetUsersById",
+    "RelativePath": "api/User/get-user-id/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "GetUsersByLibrary",
+    "RelativePath": "api/User/get-user-library/{libraryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/User/get-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "UpdateUserLibrary",
+    "RelativePath": "api/User/update-user-library/{userId}/{libraryId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User/update-user/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modUserRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Books.ModUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

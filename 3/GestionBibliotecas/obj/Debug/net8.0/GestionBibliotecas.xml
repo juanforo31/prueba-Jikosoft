@@ -1,0 +1,825 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GestionBibliotecas</name>
+    </assembly>
+    <members>
+        <member name="T:GestionBibliotecas.Application.Bussiness.BooksBO">
+            <summary>
+            Clase que tiene toda la logica de negocio de los libtos
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.#ctor(GestionBibliotecas.Infrastructure.MemoryData.InMemoryDataStore,GestionBibliotecas.Application.Bussiness.LibraryBO,GestionBibliotecas.Application.Bussiness.UserBO)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="store">Clase que permite tener todos los datos de las listas en memoria</param>
+            <param name="library">Clase para el uso de la lógica de negociod e las librerias</param>
+            <param name="user">Clase para el uso de la lógica de negocio de los usuarios</param>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.AddBook(GestionBibliotecas.Application.DTOs.Books.NewBookRequest)">
+            <summary>
+            Se añade un libro a la lista
+            </summary>
+            <param name="newBookRequest">Datos del libro a crear</param>
+            <returns>Devuelve el indentificador del libro creado</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.DeleteBook(System.Int32)">
+            <summary>
+            Elimina un libro de la lista
+            </summary>
+            <param name="bookid"></param>
+            <returns>Devuelve una validación de éxito</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.GetAllBooks">
+            <summary>
+            Trae todos los libros creados
+            </summary>
+            <returns>Una lista de todos los libros creados</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.GetAllBooksByLibrary(System.Int32)">
+            <summary>
+            Obtiene todos los libros que tiene una biblioteca
+            </summary>
+            <param name="libraryId"></param>
+            <returns>Retorna todos los libros que hay en una biblioteca en especifico</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.GetBook(GestionBibliotecas.Application.DTOs.Books.BookRequest)">
+            <summary>
+            Obtener un o varios libros dado un filtro
+            </summary>
+            <param name="bookRequest"></param>
+            <returns>Retonra un lista o un libro debido a un filtro</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.RentBook(System.Int32,System.Int32)">
+            <summary>
+            realizar la reta de un libro, siempre y cuando este disposible 
+            </summary>
+            <param name="bookId">Identificador del libro</param>
+            <param name="userId">Identificador del usuario</param>
+            <returns>Devuelve un valor de éxito o no</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.ReturnBook(System.Int32)">
+            <summary>
+            Se devuelve el libro a la biblioteca
+            </summary>
+            <param name="bookId">Indeitficador del libro a devolver</param>
+            <returns>Validacion de si fue exitoso</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.UpdateBook(System.Int32,GestionBibliotecas.Application.DTOs.Books.ModBookRequest)">
+            <summary>
+            Actualiza la información del libro
+            </summary>
+            <param name="bookId"></param>
+            <param name="modBookRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.BooksBO.GetBookById(System.Int32)">
+            <summary>
+            Obtiene un libro por su identificador
+            </summary>
+            <param name="bookId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GestionBibliotecas.Application.Bussiness.LibraryBO">
+            <summary>
+            Esta clase tiene toda la lógica de negocio para las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.LibraryBO.#ctor(GestionBibliotecas.Infrastructure.MemoryData.InMemoryDataStore)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="store"></param>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.LibraryBO.GetAllLibrerires">
+            <summary>
+            Obtiene todas las bibliotecas de la lista de bibliotecas.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.LibraryBO.GetLibrary(GestionBibliotecas.Application.DTOs.Library.LibraryRequest)">
+            <summary>
+            Obtiene una biblioteca por su identificador, nombre o dirección.
+            </summary>
+            <param name="libraryRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.LibraryBO.AddLibrary(GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest)">
+            <summary>
+            Añade una nueva biblioteca a la lista de bibliotecas.
+            </summary>
+            <param name="newlibraryRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.LibraryBO.DeleteLibrary(System.Int32)">
+            <summary>
+            Elimina una biblioteca de la lista de bibliotecas por su identificador.
+            </summary>
+            <param name="libraryId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.LibraryBO.UpdateLibrary(System.Int32,GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest)">
+            <summary>
+            Actualiza la información de una biblioteca existente por su identificador.
+            </summary>
+            <param name="libraryId"></param>
+            <param name="modLibrary"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GestionBibliotecas.Application.Bussiness.UserBO">
+            <summary>
+            Esta clase tiene toda la lógica de negocio para los libros
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.#ctor(GestionBibliotecas.Infrastructure.MemoryData.InMemoryDataStore,GestionBibliotecas.Application.Bussiness.LibraryBO)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="store">Clase que permite tener todos los datos de las listas en memoria</param>
+            <param name="library">Clase para el uso de la lógica de negocio</param>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.AddUser(GestionBibliotecas.Application.DTOs.Books.NewUserRequest)">
+            <summary>
+            Añade un miembro a la lista de libros
+            </summary>
+            <param name="newUserRequest">Datos del miembro a crear</param>
+            <returns>Devuelve el identificador del miembro creado</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.DeleteUser(System.Int32)">
+            <summary>
+            Elimina un miembro de la lista
+            </summary>
+            <param name="userId"></param>
+            <returns>Devuelve una validación de éxito</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.GetAllUsers">
+            <summary>
+            Trae todos los libros creados
+            </summary>
+            <returns>Una lista de todos los libros creados</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.GetAllUsersByLibrary(System.Int32)">
+            <summary>
+            Obtiene todos los libros que tiene una biblioteca
+            </summary>
+            <param name="libraryId"></param>
+            <returns>Retorna todos los libros que hay en una biblioteca en especifico</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.GetUser(GestionBibliotecas.Application.DTOs.Books.UserRequest)">
+            <summary>
+            Obtener uno o varios libros dado un filtro
+            </summary>
+            <param name="userRequest"></param>
+            <returns>Retonra un lista o un miembro debido a un filtro</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.UpdateLibraryUser(System.Int32,System.Int32)">
+            <summary>
+            realizar el traslado de un usuario a otra biblioteca
+            </summary>
+            <param name="userId"></param>
+            <param name="libraryId"></param>
+            <returns>Devuelve un valor de éxito o no</returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.UpdateUser(System.Int32,GestionBibliotecas.Application.DTOs.Books.ModUserRequest)">
+            <summary>
+            Actualiza la información basica del miembro
+            </summary>
+            <param name="userId"></param>
+            <param name="modUserRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GestionBibliotecas.Application.Bussiness.UserBO.GetUserById(System.Int32)">
+            <summary>
+            Obtiene un miembro por su identificador
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Books.BookRequest">
+            <summary>
+            Representa una solicitud para buscar un libro en la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.LibraryId">
+            <summary>
+            Identificador de la biblioteca donde está.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.UserId">
+            <summary>
+            Identificador de la persona que tiene el libro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Books.ModBookRequest">
+            <summary>
+            Representa una solicitud para modificar un libro en la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Books.NewBookRequest">
+            <summary>
+            Representa una solicitud para agregar un nuevo libro a la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.libraryId">
+            <summary>
+            Indeitificador de la libreria
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Books.ModUserRequest">
+            <summary>
+            Representa una solicitud para modificar un usuario en el sistema de gestión de bibliotecas.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModUserRequest.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModUserRequest.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModUserRequest.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModUserRequest.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Books.NewUserRequest">
+            <summary>
+            Representa una solicitud para crear un nuevo usuario en el sistema de gestión de bibliotecas.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewUserRequest.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewUserRequest.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewUserRequest.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewUserRequest.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewUserRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Books.UserRequest">
+            <summary>
+            Representa una solicitud de usuario para buscar en el sistema de gestión de bibliotecas.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserRequest.UserId">
+            <summary>
+            Identificador del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserRequest.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserRequest.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserRequest.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserRequest.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserRequest.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Books.UserResponse">
+            <summary>
+            Representa la respuesta de un usuario en el sistema de gestión de bibliotecas.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserResponse.UserId">
+            <summary>
+            Identificador del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserResponse.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserResponse.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserResponse.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserResponse.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserResponse.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.UserResponse.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.BookResponse">
+            <summary>
+            Representa una respuesta que contiene información sobre un libro en la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.LibraryId">
+            <summary>
+            Identificador de la biblioteca donde está.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.UserId">
+            <summary>
+            Identificador de la persona que tiene el libro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Library.LibraryRequest">
+            <summary>
+            Clase que representa una solicitud de biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryRequest.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryRequest.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Library.LibraryResponse">
+            <summary>
+            Clase que representa una respuesta de biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.City">
+            <summary>
+            Ciudad donde se encuentra la biblioteca.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest">
+            <summary>
+            Clase que representa una solicitud para modificar una biblioteca existente.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.City">
+            <summary>
+            Ciudad donde se encuentra la biblioteca.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest">
+            <summary>
+            Clase que representa una solicitud para crear una nueva biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest.City">
+            <summary>
+            Ciudad donde se encuentra la biblioteca.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Controllers.BookController">
+            <summary>
+            Controlador para manejar las operaciones relacionadas con los libros de la biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.#ctor(GestionBibliotecas.Application.Bussiness.BooksBO)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.GetBooks">
+            <summary>
+            Obtiene todos los libros de todas las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.GetBooksByFilter(GestionBibliotecas.Application.DTOs.Books.BookRequest)">
+            <summary>
+            Obtiene los libros un dado un filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.GetBooksByLibrary(System.Int32)">
+            <summary>
+            Obtiene los libros una biblioteca en específico.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.GetBookById(System.Int32)">
+            <summary>
+            Obtiene el libro dado su id.
+            </summary>
+            <param name="bookId">Identificador del libro</param>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.addBook(GestionBibliotecas.Application.DTOs.Books.NewBookRequest)">
+            <summary>
+            Añade un libro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.UpdateBook(System.Int32,GestionBibliotecas.Application.DTOs.Books.ModBookRequest)">
+            <summary>
+            modifica un libro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.rentBook(System.Int32,System.Int32)">
+            <summary>
+            Se renta un libro a un usuario
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.returnBook(System.Int32,System.Int32)">
+            <summary>
+            Se devuelve un libro a la biblioteca
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.BookController.DeleteBook(System.Int32)">
+            <summary>
+            Eliminar un libro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Controllers.LibraryController">
+            <summary>
+            Controlador para manejar las operaciones relacionadas con las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.#ctor(GestionBibliotecas.Application.Bussiness.LibraryBO)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="library"></param>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.GetLibraries">
+            <summary>
+            Obtiene todas las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.GetLibrary(GestionBibliotecas.Application.DTOs.Library.LibraryRequest)">
+            <summary>
+            Obtiene una biblioteca dado un filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.AddLibrary(GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest)">
+            <summary>
+            Añade una biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.UpdateLibrary(System.Int32,GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest)">
+            <summary>
+            modifica una biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.DeleteLibrary(System.Int32)">
+            <summary>
+            Eliminar una biblioteca.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Controllers.UserController">
+            <summary>
+            Controlador para manejar las operaciones relacionadas con los miembros de la biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.#ctor(GestionBibliotecas.Application.Bussiness.UserBO)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.GetUsers">
+            <summary>
+            Obtiene todos los miembros de todas las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersByFilter(GestionBibliotecas.Application.DTOs.Books.UserRequest)">
+            <summary>
+            Obtiene los miembros un dado un filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersByLibrary(System.Int32)">
+            <summary>
+            Obtiene los miembros una biblioteca en específico.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersById(System.Int32)">
+            <summary>
+            Obtiene el usuario dado su id.
+            </summary>
+            <param name="userId">Identificador del usuario</param>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.addUser(GestionBibliotecas.Application.DTOs.Books.NewUserRequest)">
+            <summary>
+            Añade un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.UpdateUser(System.Int32,GestionBibliotecas.Application.DTOs.Books.ModUserRequest)">
+            <summary>
+            modifica un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.UpdateUserLibrary(System.Int32,System.Int32)">
+            <summary>
+            modifica un la biblioteca de un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.DeleteUser(System.Int32)">
+            <summary>
+            Eliminar un miembro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Domain.Interfaces.IBooks">
+            <summary>
+            Interfaz que define las operaciones relacionadas con los libros en la biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.GetBook(GestionBibliotecas.Application.DTOs.Books.BookRequest)">
+            <summary>
+            Obtiene un libro dado un filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.GetAllBooks">
+            <summary>
+            Obtiene todos los libros.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.GetAllBooksByLibrary(System.Int32)">
+            <summary>
+            Obtiene todos los libros de una biblioteca en especifico.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.AddBook(GestionBibliotecas.Application.DTOs.Books.NewBookRequest)">
+            <summary>
+            Adicioona un nuevo libro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.UpdateBook(System.Int32,GestionBibliotecas.Application.DTOs.Books.ModBookRequest)">
+            <summary>
+            Actualiza el estado del libro
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.RentBook(System.Int32,System.Int32)">
+            <summary>
+            Vincular el libro a un usuario.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.ReturnBook(System.Int32)">
+            <summary>
+            Hacer ela devolución del libro a la biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.DeleteBook(System.Int32)">
+            <summary>
+            Elimina un libro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Domain.Interfaces.ILibraries">
+            <summary>
+            Interfaz que define las operaciones relacionadas con las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.GetLibrary(GestionBibliotecas.Application.DTOs.Library.LibraryRequest)">
+            <summary>
+            Obtiene una biblioteca por su identificador.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.GetAllLibrerires">
+            <summary>
+            Obtiene todas las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.AddLibrary(GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest)">
+            <summary>
+            Adiciona una nueva biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.UpdateLibrary(System.Int32,GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest)">
+            <summary>
+            Actualiza la información de la biblioteca
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.DeleteLibrary(System.Int32)">
+            <summary>
+            Elimina una biblioteca.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Domain.Interfaces.IUsers">
+            <summary>
+            Interfaz para la gestión de miembros en la biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.GetUser(GestionBibliotecas.Application.DTOs.Books.UserRequest)">
+            <summary>
+            Obtiene un miembro según filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.GetAllUsers">
+            <summary>
+            Obtiene todos los libros.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.GetAllUsersByLibrary(System.Int32)">
+            <summary>
+            Obtiene todos los usuarios de una libreria.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.AddUser(GestionBibliotecas.Application.DTOs.Books.NewUserRequest)">
+            <summary>
+            Adiciona un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.UpdateUser(System.Int32,GestionBibliotecas.Application.DTOs.Books.ModUserRequest)">
+            <summary>
+            Actualiza la información del miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.UpdateLibraryUser(System.Int32,System.Int32)">
+            <summary>
+            Cambiar usuario de biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.DeleteUser(System.Int32)">
+            <summary>
+            Elimina un miembro.
+            </summary>
+        </member>
+        <member name="T:GestionBibliotecas.Infrastructure.MemoryData.InMemoryDataStore">
+            <summary>
+            Clase referente para almacenar datos en memoria.
+            </summary>
+        </member>
+    </members>
+</doc>
