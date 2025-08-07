@@ -634,7 +634,7 @@
             Obtiene una biblioteca dado un filtro.
             </summary>
         </member>
-        <member name="M:GestionBibliotecas.Controllers.LibraryController.addLibrary(GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest)">
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.AddLibrary(GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest)">
             <summary>
             Añade una biblioteca.
             </summary>
@@ -662,17 +662,17 @@
         </member>
         <member name="M:GestionBibliotecas.Controllers.UserController.GetUsers">
             <summary>
-            Obtiene todos los libros de todas las bibliotecas.
+            Obtiene todos los miembros de todas las bibliotecas.
             </summary>
         </member>
         <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersByFilter(GestionBibliotecas.Application.DTOs.Books.UserRequest)">
             <summary>
-            Obtiene los libros un dado un filtro.
+            Obtiene los miembros un dado un filtro.
             </summary>
         </member>
         <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersByLibrary(System.Int32)">
             <summary>
-            Obtiene los libros una biblioteca en específico.
+            Obtiene los miembros una biblioteca en específico.
             </summary>
         </member>
         <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersById(System.Int32)">

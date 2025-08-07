@@ -83,8 +83,8 @@ namespace GestionBibliotecas.Controllers
         /// <summary>
         /// Obtiene los libros una biblioteca en específico.
         /// </summary>
-        [HttpPost]
-        [Route("get-book-library")]
+        [HttpGet]
+        [Route("get-book-library/{libraryId}")]
         public async Task<IActionResult> GetBooksByLibrary(int libraryId)
         {
             try

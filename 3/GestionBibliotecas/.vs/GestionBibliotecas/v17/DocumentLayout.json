@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:controllers\\librarycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\application\\bussiness\\librarybo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:application\\bussiness\\librarybo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\domain\\interfaces\\ilibraries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:domain\\interfaces\\ilibraries.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\application\\dtos\\library\\libraryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:application\\dtos\\library\\libraryrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|c:\\users\\juand\\onedrive\\documentos\\personal onedrive\\pruebas\\prueba-jikosoft\\3\\gestionbibliotecas\\application\\dtos\\books\\bookrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{915CC3B6-F0B1-4C35-BD71-B837E927E60A}|GestionBibliotecas.csproj|solutionrelative:application\\dtos\\books\\bookrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T22:24:30.425Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "LibraryRequest.cs",
-              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Application\\DTOs\\Library\\LibraryRequest.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Library\\LibraryRequest.cs",
-              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Application\\DTOs\\Library\\LibraryRequest.cs",
-              "RelativeToolTip": "Application\\DTOs\\Library\\LibraryRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T22:03:32.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BookRequest.cs",
-              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Application\\DTOs\\Books\\BookRequest.cs",
-              "RelativeDocumentMoniker": "Application\\DTOs\\Books\\BookRequest.cs",
-              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Application\\DTOs\\Books\\BookRequest.cs",
-              "RelativeToolTip": "Application\\DTOs\\Books\\BookRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T22:03:26.313Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LibraryController.cs",
-              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\LibraryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\LibraryController.cs",
-              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\LibraryController.cs",
-              "RelativeToolTip": "Controllers\\LibraryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADAAAAAuAAAAAAAAAA==",
+              "Title": "BookController.cs",
+              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookController.cs",
+              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\BookController.cs",
+              "RelativeToolTip": "Controllers\\BookController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAApwFYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T21:47:20.69Z",
+              "WhenOpened": "2025-08-07T22:47:15.508Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ILibraries.cs",
-              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Domain\\Interfaces\\ILibraries.cs",
-              "RelativeDocumentMoniker": "Domain\\Interfaces\\ILibraries.cs",
-              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Domain\\Interfaces\\ILibraries.cs",
-              "RelativeToolTip": "Domain\\Interfaces\\ILibraries.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAoAAABHAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAkwFYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T21:12:07.233Z",
+              "WhenOpened": "2025-08-07T22:26:10.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LibraryBO.cs",
-              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Application\\Bussiness\\LibraryBO.cs",
-              "RelativeDocumentMoniker": "Application\\Bussiness\\LibraryBO.cs",
-              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Application\\Bussiness\\LibraryBO.cs",
-              "RelativeToolTip": "Application\\Bussiness\\LibraryBO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAJAAAAAAAAAA==",
+              "Title": "LibraryController.cs",
+              "DocumentMoniker": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\LibraryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LibraryController.cs",
+              "ToolTip": "C:\\Users\\juand\\OneDrive\\Documentos\\Personal OneDrive\\Pruebas\\prueba-Jikosoft\\3\\GestionBibliotecas\\Controllers\\LibraryController.cs",
+              "RelativeToolTip": "Controllers\\LibraryController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAlwEMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T21:10:50.818Z",
+              "WhenOpened": "2025-08-07T22:16:42.731Z",
               "EditorCaption": ""
             }
           ]

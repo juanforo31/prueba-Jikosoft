@@ -86,7 +86,7 @@ namespace GestionBibliotecas.Controllers
         /// </summary>
         [HttpPost]
         [Route("add-library")]
-        public async Task<IActionResult> addLibrary([FromBody] NewLibraryRequest newlibraryRequest)
+        public async Task<IActionResult> AddLibrary([FromBody] NewLibraryRequest newlibraryRequest)
         {
             try
             {

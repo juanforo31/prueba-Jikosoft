@@ -66,15 +66,15 @@
   {
     "ContainingType": "GestionBibliotecas.Controllers.BookController",
     "Method": "GetBooksByLibrary",
-    "RelativePath": "api/Book/get-book-library",
-    "HttpMethod": "POST",
+    "RelativePath": "api/Book/get-book-library/{libraryId}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "libraryId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -154,7 +154,7 @@
   },
   {
     "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
-    "Method": "addLibrary",
+    "Method": "AddLibrary",
     "RelativePath": "api/Library/add-library",
     "HttpMethod": "POST",
     "IsController": true,
@@ -298,15 +298,15 @@
   {
     "ContainingType": "GestionBibliotecas.Controllers.UserController",
     "Method": "GetUsersByLibrary",
-    "RelativePath": "api/User/get-user-library",
-    "HttpMethod": "POST",
+    "RelativePath": "api/User/get-user-library/{libraryId}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "libraryId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

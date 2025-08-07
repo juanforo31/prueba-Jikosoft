@@ -50,8 +50,8 @@
         }
       }
     },
-    "/api/Book/get-book-library": {
-      "post": {
+    "/api/Book/get-book-library/{libraryId}": {
+      "get": {
         "tags": [
           "Book"
         ],
@@ -59,7 +59,8 @@
         "parameters": [
           {
             "name": "libraryId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -411,7 +412,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Obtiene todos los libros de todas las bibliotecas.",
+        "summary": "Obtiene todos los miembros de todas las bibliotecas.",
         "responses": {
           "200": {
             "description": "OK"
@@ -424,7 +425,7 @@
         "tags": [
           "User"
         ],
-        "summary": "Obtiene los libros un dado un filtro.",
+        "summary": "Obtiene los miembros un dado un filtro.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -451,16 +452,17 @@
         }
       }
     },
-    "/api/User/get-user-library": {
-      "post": {
+    "/api/User/get-user-library/{libraryId}": {
+      "get": {
         "tags": [
           "User"
         ],
-        "summary": "Obtiene los libros una biblioteca en específico.",
+        "summary": "Obtiene los miembros una biblioteca en específico.",
         "parameters": [
           {
             "name": "libraryId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"

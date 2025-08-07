@@ -27,7 +27,7 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Obtiene todos los libros de todas las bibliotecas.
+        /// Obtiene todos los miembros de todas las bibliotecas.
         /// </summary>
         [HttpGet]
         [Route("get-users")]
@@ -53,7 +53,7 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Obtiene los libros un dado un filtro.
+        /// Obtiene los miembros un dado un filtro.
         /// </summary>
         [HttpPost]
         [Route("get-user-filter")]
@@ -82,10 +82,10 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Obtiene los libros una biblioteca en específico.
+        /// Obtiene los miembros una biblioteca en específico.
         /// </summary>
-        [HttpPost]
-        [Route("get-user-library")]
+        [HttpGet]
+        [Route("get-user-library/{libraryId}")]
         public async Task<IActionResult> GetUsersByLibrary(int libraryId)
         {
             try
