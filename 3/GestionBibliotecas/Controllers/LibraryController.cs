@@ -9,6 +9,8 @@ namespace GestionBibliotecas.Controllers
     [Route("api/[controller]")]
     public class LibraryController : ControllerBase
     {
+        // Se genera este objeto con su respectivo constructor, ya que para esta ocación es necesario hacer uso de un Singleton para mantener la información en momoria, al no tener DB
+        // Se puede ver el Singleton implementado en Program.cs
 
         private readonly LibraryBO _library;
 
@@ -18,17 +20,25 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Añade una biblioteca.
+        /// Obtiene todas las bibliotecas.
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        [Route("add")]
-        public async Task<IActionResult> addLibrary([FromBody] LibraryRequest libraryRequest)
+        [HttpGet]
+        [Route("getLibraries")]
+        public async Task<IActionResult> GetLibraries()
         {
             try
             {
-                int resultado = await _library.AddLibrary(libraryRequest);
-                return Ok($"Biblioteca agregada correctamente con el identificador " + resultado);
+                var resultado = await _library.GetAllLibrerires();
+                if (resultado == null || !resultado.Any())
+                {
+                    return Ok("No se han encontrado bibliotecas");
+                }
+                else
+                {
+
+                    return Ok(resultado);
+                }
             }
             catch (Exception e)
             {
@@ -37,17 +47,109 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Obtiene todas las bibliotecas.
+        /// Obtiene una biblioteca dad un filtro.
         /// </summary>
         /// <returns></returns>
-        [HttpGet]
-        [Route("get")]
-        public async Task<IActionResult> GetLibraries()
+        [HttpPost]
+        [Route("getLibrary")]
+        public async Task<IActionResult> GetLibrary([FromBody] LibraryRequest libraryRequest)
         {
             try
             {
-                var resultado = await _library.GetAllLibrerires();
-                return Ok(resultado);
+
+                var resultado = await _library.GetLibrary(libraryRequest);
+                var library = resultado.Item1;
+                bool existsLibrary = resultado.Item2;
+                if (existsLibrary)
+                {
+                    return Ok(library);
+                }
+                else
+                {
+                    return Ok("No se ha encontrado nínguna biblioteca con los datos proporcionados");
+                }
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Añade una biblioteca.
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        [Route("add")]
+        public async Task<IActionResult> addLibrary([FromBody] NewLibraryRequest newlibraryRequest)
+        {
+            try
+            {
+                int resultado = await _library.AddLibrary(newlibraryRequest);
+
+                if (resultado != 0)
+                {
+                    return Ok($"Biblioteca agregada correctamente con el identificador " + resultado);
+                }
+                else
+                {
+                    return Ok("No se pudo crear la biblioteca");
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// modifica una biblioteca.
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut]
+        [Route("updateLibrary/{libraryId}")]
+        public async Task<IActionResult> UpdateLibrary(int libraryId, [FromBody] ModLibraryRequest modLibraryRequest)
+        {
+            try
+            {
+                bool resultado = await _library.UpdateLibrary(libraryId, modLibraryRequest);
+
+                if (resultado)
+                {
+                    return Ok("La biblioteca se ha modificado con éxito");
+                }
+                else
+                {
+                    return Ok("No se pudo modificar la biblioteca");
+                }
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Eliminar una biblioteca.
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("deleteLibrary/{libraryId}")]
+        public async Task<IActionResult> DeleteLibrary(int libraryId)
+        {
+            try
+            {
+                bool resultado = await _library.DeleteLibrary(libraryId);
+
+                if (resultado)
+                {
+                    return Ok("La biblioteca se ha eliminado con éxito");
+                }
+                else
+                {
+                    return Ok("No se pudo eliminar la biblioteca");
+                }
             }
             catch (Exception e)
             {

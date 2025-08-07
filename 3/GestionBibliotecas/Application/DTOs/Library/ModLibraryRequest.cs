@@ -1,11 +1,11 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Library
 {
-    public class LibraryRequest
+    public class ModLibraryRequest
     {
         /// <summary>
         /// Identifiacdor de la biblioteca.
         /// </summary>
-        public int? LibraryId { get; set; }
+        public int? LibraryId { get; }
 
         /// <summary>
         /// Nombre de la biblioteca
@@ -17,5 +17,9 @@
         /// </summary>
         public string? Address { get; set; }
 
+        /// <summary>
+        /// Ciudad donde se encuentra la biblioteca.
+        /// </summary>
+        public string? City { get; set; }
     }
 }

@@ -8,6 +8,48 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "newlibraryRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "DeleteLibrary",
+    "RelativePath": "api/Library/deleteLibrary/{libraryId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "GetLibraries",
+    "RelativePath": "api/Library/getLibraries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
+    "Method": "GetLibrary",
+    "RelativePath": "api/Library/getLibrary",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
         "Name": "libraryRequest",
         "Type": "GestionBibliotecas.Application.DTOs.Library.LibraryRequest",
         "IsRequired": true
@@ -17,12 +59,23 @@
   },
   {
     "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
-    "Method": "GetLibraries",
-    "RelativePath": "api/Library/get",
-    "HttpMethod": "GET",
+    "Method": "UpdateLibrary",
+    "RelativePath": "api/Library/updateLibrary/{libraryId}",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modLibraryRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

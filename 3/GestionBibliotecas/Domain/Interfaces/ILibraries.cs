@@ -8,7 +8,7 @@ namespace GestionBibliotecas.Domain.Interfaces
         /// <summary>
         /// Obtiene una biblioteca por su identificador.
         /// </summary>
-        Task<LibraryResponse?> GetLibrary(LibraryRequest libraryRequest);
+        Task<(LibraryResponse?, bool)> GetLibrary(LibraryRequest libraryRequest);
         /// <summary>
         /// Obtiene todas las bibliotecas.
         /// </summary>
@@ -16,14 +16,14 @@ namespace GestionBibliotecas.Domain.Interfaces
         /// <summary>
         /// Adiciona una nueva biblioteca.
         /// </summary>
-        Task<int> AddLibrary(LibraryRequest libraryRequest);
+        Task<int> AddLibrary(NewLibraryRequest NewlibraryRequest);
         /// <summary>
         /// Actualiza la información de la biblioteca
         /// </summary>
-        bool UpdateLibrary(LibraryRequest libraryRequest);
+        Task<bool> UpdateLibrary(int libraryId,ModLibraryRequest modLibraryRequest);
         /// <summary>
         /// Elimina una biblioteca.
         /// </summary>
-        bool DeleteLibrary(int libraryId);
+        Task<bool> DeleteLibrary(int libraryId);
     }
 }
