@@ -5,17 +5,25 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestionBibliotecas.Controllers
 {
+    /// <summary>
+    /// Controlador para manejar las operaciones relacionadas con los miembros de la biblioteca.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
+    
     public class UserController : ControllerBase
     {
         // Se genera este objeto con su respectivo constructor, ya que para esta ocación es necesario hacer uso de un Singleton para mantener la información en momoria, al no tener DB
         // Se puede ver el Singleton implementado en Program.cs
         private readonly UserBO _user;
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="user"></param>
 
-        public UserController(UserBO service)
+        public UserController(UserBO user)
         {
-            _user = service;
+            _user = user;
         }
 
         /// <summary>
@@ -49,7 +57,7 @@ namespace GestionBibliotecas.Controllers
         /// </summary>
         [HttpPost]
         [Route("get-user-filter")]
-        public async Task<IActionResult> GetBooksByFilter([FromBody] UserRequest userRequest)
+        public async Task<IActionResult> GetUsersByFilter([FromBody] UserRequest userRequest)
         {
             try
             {
@@ -78,7 +86,7 @@ namespace GestionBibliotecas.Controllers
         /// </summary>
         [HttpPost]
         [Route("get-user-library")]
-        public async Task<IActionResult> GetBooksByLibrary(int libraryId)
+        public async Task<IActionResult> GetUsersByLibrary(int libraryId)
         {
             try
             {
@@ -91,6 +99,36 @@ namespace GestionBibliotecas.Controllers
                 else
                 {
                     return Ok(resultado);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Obtiene el usuario dado su id.
+        /// </summary>
+        /// <param name="userId">Identificador del usuario</param>
+        [HttpGet]
+        [Route("get-user-id/{userId}")]
+        public async Task<IActionResult> GetUsersById(int userId)
+        {
+            try
+            {
+
+                var resultado = await _user.GetUserById(userId);
+                var user = resultado.Item1;
+                bool existsUser = resultado.Item2;
+                if (!existsUser)
+                {
+                    return Ok("Error al encontrar el miembro");
+                }
+                else
+                {
+                    return Ok(user);
                 }
 
             }

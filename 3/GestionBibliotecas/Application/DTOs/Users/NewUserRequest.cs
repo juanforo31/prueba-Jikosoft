@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Books
 {
+    /// <summary>
+    /// Representa una solicitud para crear un nuevo usuario en el sistema de gestión de bibliotecas.
+    /// </summary>
     public class NewUserRequest
     {
         /// <summary>

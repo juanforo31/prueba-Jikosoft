@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestionBibliotecas.Controllers
 {
+    /// <summary>
+    /// Controlador para manejar las operaciones relacionadas con las bibliotecas.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class LibraryController : ControllerBase
@@ -14,12 +17,13 @@ namespace GestionBibliotecas.Controllers
         // Se puede ver el Singleton implementado en Program.cs
 
         private readonly LibraryBO _library;
-        private readonly InMemoryDataStore _store;
-
-        public LibraryController(InMemoryDataStore store,LibraryBO library)
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="library"></param>
+        public LibraryController(LibraryBO library)
         {
             _library = library;
-            _store = store;
         }
 
         /// <summary>

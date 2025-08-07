@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Library
 {
+    /// <summary>
+    /// Clase que representa una solicitud para crear una nueva biblioteca.
+    /// </summary>
     public class NewLibraryRequest
     {
         /// <summary>

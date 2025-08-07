@@ -1,7 +1,6 @@
 ﻿using GestionBibliotecas.Application.DTOs;
 using GestionBibliotecas.Application.DTOs.Books;
 using GestionBibliotecas.Application.DTOs.Library;
-using GestionBibliotecas.Application.DTOs.Books;
 using GestionBibliotecas.Domain.Interfaces;
 using GestionBibliotecas.Infrastructure.MemoryData;
 
@@ -260,8 +259,12 @@ namespace GestionBibliotecas.Application.Bussiness
 
             return isModBook;
         }
-
-        private async Task<(BookResponse?, bool)> GetBookById(int bookId)
+        /// <summary>
+        /// Obtiene un libro por su identificador
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <returns></returns>
+        public async Task<(BookResponse?, bool)> GetBookById(int bookId)
         {
             // Busca un libro en la lista de libros por su identificador
             BookResponse? book = _store.Books.FirstOrDefault(bo =>

@@ -3,6 +3,9 @@ using GestionBibliotecas.Application.DTOs.Books;
 
 namespace GestionBibliotecas.Domain.Interfaces
 {
+    /// <summary>
+    /// Interfaz que define las operaciones relacionadas con los libros en la biblioteca.
+    /// </summary>
     public interface IBooks
     {
         /// <summary>

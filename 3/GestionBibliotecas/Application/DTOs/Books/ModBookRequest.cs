@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Books
 {
+    /// <summary>
+    /// Representa una solicitud para modificar un libro en la biblioteca.
+    /// </summary>
     public class ModBookRequest
     {
         /// <summary>

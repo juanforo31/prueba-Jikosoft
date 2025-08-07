@@ -73,6 +73,31 @@
         }
       }
     },
+    "/api/Book/get-book-id/{bookId}": {
+      "get": {
+        "tags": [
+          "Book"
+        ],
+        "summary": "Obtiene el libro dado su id.",
+        "parameters": [
+          {
+            "name": "bookId",
+            "in": "path",
+            "description": "Identificador del libro",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Book/add-book": {
       "post": {
         "tags": [
@@ -449,6 +474,31 @@
         }
       }
     },
+    "/api/User/get-user-id/{userId}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Obtiene el usuario dado su id.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "Identificador del usuario",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/User/add-user": {
       "post": {
         "tags": [
@@ -590,7 +640,8 @@
           "bookId": {
             "type": "integer",
             "description": "Identifiacdor del libro.",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "title": {
             "type": "string",
@@ -610,12 +661,14 @@
           "publishedYear": {
             "type": "integer",
             "description": "Año de publicación.",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "libraryId": {
             "type": "integer",
             "description": "Identificador de la biblioteca donde está.",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "userId": {
             "type": "integer",
@@ -624,7 +677,8 @@
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representa una solicitud para buscar un libro en la biblioteca."
       },
       "LibraryRequest": {
         "type": "object",
@@ -646,7 +700,8 @@
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Clase que representa una solicitud de biblioteca."
       },
       "ModBookRequest": {
         "type": "object",
@@ -672,7 +727,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representa una solicitud para modificar un libro en la biblioteca."
       },
       "ModLibraryRequest": {
         "type": "object",
@@ -700,7 +756,8 @@
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Clase que representa una solicitud para modificar una biblioteca existente."
       },
       "ModUserRequest": {
         "type": "object",
@@ -726,7 +783,8 @@
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representa una solicitud para modificar un usuario en el sistema de gestión de bibliotecas."
       },
       "NewBookRequest": {
         "type": "object",
@@ -757,7 +815,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representa una solicitud para agregar un nuevo libro a la biblioteca."
       },
       "NewLibraryRequest": {
         "type": "object",
@@ -778,7 +837,8 @@
             "nullable": true
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Clase que representa una solicitud para crear una nueva biblioteca."
       },
       "NewUserRequest": {
         "type": "object",
@@ -809,7 +869,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representa una solicitud para crear un nuevo usuario en el sistema de gestión de bibliotecas."
       },
       "UserRequest": {
         "type": "object",
@@ -817,7 +878,8 @@
           "userId": {
             "type": "integer",
             "description": "Identificador del usuario.",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "firstName": {
             "type": "string",
@@ -850,7 +912,8 @@
             "format": "int32"
           }
         },
-        "additionalProperties": false
+        "additionalProperties": false,
+        "description": "Representa una solicitud de usuario para buscar en el sistema de gestión de bibliotecas."
       }
     }
   }

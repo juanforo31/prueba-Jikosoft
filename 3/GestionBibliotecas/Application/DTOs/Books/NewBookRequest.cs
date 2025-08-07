@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Books
 {
+    /// <summary>
+    /// Representa una solicitud para agregar un nuevo libro a la biblioteca.
+    /// </summary>
     public class NewBookRequest
     {
         /// <summary>

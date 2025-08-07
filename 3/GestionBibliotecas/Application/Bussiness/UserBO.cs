@@ -237,7 +237,11 @@ namespace GestionBibliotecas.Application.Bussiness
 
             return isModUser;
         }
-
+        /// <summary>
+        /// Obtiene un miembro por su identificador
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<(UserResponse?, bool)> GetUserById(int userId)
         {
             // Busca un miembro en la lista de libros por su identificador

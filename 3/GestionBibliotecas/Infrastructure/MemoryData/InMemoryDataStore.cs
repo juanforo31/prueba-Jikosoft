@@ -5,6 +5,9 @@ using GestionBibliotecas.Application.DTOs.Books;
 
 namespace GestionBibliotecas.Infrastructure.MemoryData
 {
+    /// <summary>
+    /// Clase referente para almacenar datos en memoria.
+    /// </summary>
     public class InMemoryDataStore
     {
         public List<LibraryResponse> Libreries { get; set; } = new();

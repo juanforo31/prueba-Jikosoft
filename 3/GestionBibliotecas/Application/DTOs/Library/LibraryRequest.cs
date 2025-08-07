@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Library
 {
+    /// <summary>
+    /// Clase que representa una solicitud de biblioteca.
+    /// </summary>
     public class LibraryRequest
     {
         /// <summary>

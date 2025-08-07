@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Library
 {
+    /// <summary>
+    /// Clase que representa una respuesta de biblioteca.
+    /// </summary>
     public class LibraryResponse
     {
         /// <summary>

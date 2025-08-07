@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Books
 {
+    /// <summary>
+    /// Representa la respuesta de un usuario en el sistema de gestión de bibliotecas.
+    /// </summary>
     public class UserResponse
     {
         /// <summary>

@@ -1,9 +1,13 @@
 ﻿using GestionBibliotecas.Application.Bussiness;
 using GestionBibliotecas.Application.DTOs.Books;
+using GestionBibliotecas.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestionBibliotecas.Controllers
 {
+    /// <summary>
+    /// Controlador para manejar las operaciones relacionadas con los libros de la biblioteca.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     
@@ -12,7 +16,10 @@ namespace GestionBibliotecas.Controllers
         // Se genera este objeto con su respectivo constructor, ya que para esta ocación es necesario hacer uso de un Singleton para mantener la información en momoria, al no tener DB
         // Se puede ver el Singleton implementado en Program.cs
         private readonly BooksBO _book;
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="service"></param>
         public BookController(BooksBO service)
         {
             _book = service;
@@ -91,6 +98,36 @@ namespace GestionBibliotecas.Controllers
                 else
                 {
                     return Ok(resultado);
+                }
+
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        /// <summary>
+        /// Obtiene el libro dado su id.
+        /// </summary>
+        /// <param name="bookId">Identificador del libro</param>
+        [HttpGet]
+        [Route("get-book-id/{bookId}")]
+        public async Task<IActionResult> GetBookById(int bookId)
+        {
+            try
+            {
+
+                var resultado = await _book.GetBookById(bookId);
+                var book = resultado.Item1;
+                bool existsBook = resultado.Item2;
+                if (!existsBook)
+                {
+                    return Ok("Error al encontrar el libro");
+                }
+                else
+                {
+                    return Ok(book);
                 }
 
             }

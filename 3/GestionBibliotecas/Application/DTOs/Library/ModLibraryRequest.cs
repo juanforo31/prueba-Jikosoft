@@ -1,5 +1,8 @@
 ﻿namespace GestionBibliotecas.Application.DTOs.Library
 {
+    /// <summary>
+    /// Clase que representa una solicitud para modificar una biblioteca existente.
+    /// </summary>
     public class ModLibraryRequest
     {
         /// <summary>

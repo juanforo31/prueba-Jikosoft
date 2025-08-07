@@ -2,6 +2,9 @@
 
 namespace GestionBibliotecas.Domain.Interfaces
 {
+    /// <summary>
+    /// Interfaz para la gestión de miembros en la biblioteca.
+    /// </summary>
     public interface IUsers
     {
 

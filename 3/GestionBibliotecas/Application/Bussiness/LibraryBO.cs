@@ -4,12 +4,18 @@ using GestionBibliotecas.Infrastructure.MemoryData;
 
 namespace GestionBibliotecas.Application.Bussiness
 {
+    /// <summary>
+    /// Esta clase tiene toda la lógica de negocio para las bibliotecas.
+    /// </summary>
     public class LibraryBO : ILibraries
     {
         private InMemoryDataStore _store;
 
 
-        // Constructor
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="store"></param>
         public LibraryBO(InMemoryDataStore store)
         {
             _store = store;
@@ -23,13 +29,20 @@ namespace GestionBibliotecas.Application.Bussiness
 
             _store.Libreries.Add(newLibrary);
         }
-
+        /// <summary>
+        /// Obtiene todas las bibliotecas de la lista de bibliotecas.
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<LibraryResponse>> GetAllLibrerires()
         {
             // Retorna la lista de bibliotecas
             return await Task.FromResult(_store.Libreries);
         }
-
+        /// <summary>
+        /// Obtiene una biblioteca por su identificador, nombre o dirección.
+        /// </summary>
+        /// <param name="libraryRequest"></param>
+        /// <returns></returns>
         public async Task<(LibraryResponse?, bool)> GetLibrary(LibraryRequest libraryRequest)
         {
             // Busca una biblioteca en la lista de bibliotecas por su identificador, nombre o dirección
@@ -43,6 +56,11 @@ namespace GestionBibliotecas.Application.Bussiness
 
             return await Task.FromResult((library, existLibrary));
         }
+        /// <summary>
+        /// Añade una nueva biblioteca a la lista de bibliotecas.
+        /// </summary>
+        /// <param name="newlibraryRequest"></param>
+        /// <returns></returns>
         public async Task<int> AddLibrary(NewLibraryRequest newlibraryRequest)
         {
             // Como identificador se esta usando un número random
@@ -86,7 +104,11 @@ namespace GestionBibliotecas.Application.Bussiness
             }
             return await Task.FromResult(libraryId);
         }
-
+        /// <summary>
+        /// Elimina una biblioteca de la lista de bibliotecas por su identificador.
+        /// </summary>
+        /// <param name="libraryId"></param>
+        /// <returns></returns>
         public async Task<bool> DeleteLibrary(int libraryId)
         {
             // Se busca la biblioteca por su identificador
@@ -110,7 +132,12 @@ namespace GestionBibliotecas.Application.Bussiness
 
             return await Task.FromResult(isDelLibrary);
         }
-
+        /// <summary>
+        /// Actualiza la información de una biblioteca existente por su identificador.
+        /// </summary>
+        /// <param name="libraryId"></param>
+        /// <param name="modLibrary"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateLibrary(int libraryId, ModLibraryRequest modLibrary)
         {
             bool isModLibrary = false;
