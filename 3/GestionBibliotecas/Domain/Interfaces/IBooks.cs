@@ -8,26 +8,32 @@ namespace GestionBibliotecas.Domain.Interfaces
         /// <summary>
         /// Obtiene un libro dado un filtro.
         /// </summary>
-        BookResponse GetBook(BookRequest bookRequest);
+        Task<(BookResponse?,bool)> GetBook(BookRequest bookRequest);
         /// <summary>
         /// Obtiene todos los libros.
         /// </summary>
-        IEnumerable<BookResponse> GetAllBooks();
+        Task<IEnumerable<BookResponse>> GetAllBooks();
         /// <summary>
         /// Obtiene todos los libros de una biblioteca en especifico.
         /// </summary>
-        IEnumerable<BookResponse> GetAllBooksByLibrary(int LibraryId);
+        Task<IEnumerable<BookResponse>> GetAllBooksByLibrary(int LibraryId);
         /// <summary>
         /// Adicioona un nuevo libro.
         /// </summary>
-        int AddBook(BookResponse book);
+        Task<int> AddBook(NewBookRequest newBookRequest);
         /// <summary>
         /// Actualiza el estado del libro
         /// </summary>
-        void UpdateBook(BookResponse book);
+        Task<bool> UpdateBook(int bookId,ModBookRequest modBookRequest);
+
+        /// <summary>
+        /// Vincular el libro a un usuario.
+        /// </summary>
+        Task<bool> RentBook(int bookId, int userId);
+
         /// <summary>
         /// Elimina un libro.
         /// </summary>
-        void DeleteBook(int id);
+        Task<bool> DeleteBook(int id);
     }
 }

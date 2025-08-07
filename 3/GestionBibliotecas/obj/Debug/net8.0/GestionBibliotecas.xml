@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GestionBibliotecas</name>
+    </assembly>
+    <members>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.LibraryId">
+            <summary>
+            Identificador de la biblioteca donde está.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.BookRequest.UserId">
+            <summary>
+            Identificador de la persona que tiene el libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.ModBookRequest.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Books.NewBookRequest.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.Title">
+            <summary>
+            Título del libro
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.Author">
+            <summary>
+            Autor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.ISBN">
+            <summary>
+            ISBN del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.PublishedYear">
+            <summary>
+            Año de publicación.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.LibraryId">
+            <summary>
+            Identificador de la biblioteca donde está.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.BookResponse.UserId">
+            <summary>
+            Identificador de la persona que tiene el libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryRequest.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryRequest.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.LibraryResponse.City">
+            <summary>
+            Ciudad donde se encuentra la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest.City">
+            <summary>
+            Ciudad donde se encuentra la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest.LibraryName">
+            <summary>
+            Nombre de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest.Address">
+            <summary>
+            Dirección de la biblioteca
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest.City">
+            <summary>
+            Ciudad donde se encuentra la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.ModUserRequest.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.ModUserRequest.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.ModUserRequest.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.ModUserRequest.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.NewUserRequest.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.NewUserRequest.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.NewUserRequest.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.NewUserRequest.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.NewUserRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserRequest.UserId">
+            <summary>
+            Identificador del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserRequest.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserRequest.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserRequest.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserRequest.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserRequest.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserRequest.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserResponse.UserId">
+            <summary>
+            Identificador del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserResponse.FirstName">
+            <summary>
+            Nombre del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserResponse.LastName">
+            <summary>
+            Apellido del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserResponse.Email">
+            <summary>
+            Correo electrónico del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserResponse.PhoneNumber">
+            <summary>
+            Teléfono del usuario.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserResponse.LibraryId">
+            <summary>
+            Identifiacdor de la biblioteca.
+            </summary>
+        </member>
+        <member name="P:GestionBibliotecas.Application.DTOs.Users.UserResponse.BookId">
+            <summary>
+            Identifiacdor del libro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.GetLibraries">
+            <summary>
+            Obtiene todas las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.GetLibrary(GestionBibliotecas.Application.DTOs.Library.LibraryRequest)">
+            <summary>
+            Obtiene una biblioteca dado un filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.addLibrary(GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest)">
+            <summary>
+            Añade una biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.UpdateLibrary(System.Int32,GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest)">
+            <summary>
+            modifica una biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.LibraryController.DeleteLibrary(System.Int32)">
+            <summary>
+            Eliminar una biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.GetUsers">
+            <summary>
+            Obtiene todos los miembros de todas las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersByFilter(GestionBibliotecas.Application.DTOs.Users.UserRequest)">
+            <summary>
+            Obtiene los miembros un dado un filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.GetUsersByLibrary(System.Int32)">
+            <summary>
+            Obtiene los miembros una biblioteca en específico.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.addUser(GestionBibliotecas.Application.DTOs.Users.NewUserRequest)">
+            <summary>
+            Añade un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.UpdateUser(System.Int32,GestionBibliotecas.Application.DTOs.Users.ModUserRequest)">
+            <summary>
+            modifica un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.UpdateUserLibrary(System.Int32,System.Int32)">
+            <summary>
+            modifica un la biblioteca de un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Controllers.UserController.DeleteUser(System.Int32)">
+            <summary>
+            Eliminar un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.GetBook(GestionBibliotecas.Application.DTOs.Books.BookRequest)">
+            <summary>
+            Obtiene un libro dado un filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.GetAllBooks">
+            <summary>
+            Obtiene todos los libros.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.GetAllBooksByLibrary(System.Int32)">
+            <summary>
+            Obtiene todos los libros de una biblioteca en especifico.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.AddBook(GestionBibliotecas.Application.DTOs.Books.NewBookRequest)">
+            <summary>
+            Adicioona un nuevo libro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.UpdateBook(System.Int32,GestionBibliotecas.Application.DTOs.Books.ModBookRequest)">
+            <summary>
+            Actualiza el estado del libro
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.RentBook(System.Int32,System.Int32)">
+            <summary>
+            Vincular el libro a un usuario.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IBooks.DeleteBook(System.Int32)">
+            <summary>
+            Elimina un libro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.GetLibrary(GestionBibliotecas.Application.DTOs.Library.LibraryRequest)">
+            <summary>
+            Obtiene una biblioteca por su identificador.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.GetAllLibrerires">
+            <summary>
+            Obtiene todas las bibliotecas.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.AddLibrary(GestionBibliotecas.Application.DTOs.Library.NewLibraryRequest)">
+            <summary>
+            Adiciona una nueva biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.UpdateLibrary(System.Int32,GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest)">
+            <summary>
+            Actualiza la información de la biblioteca
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.ILibraries.DeleteLibrary(System.Int32)">
+            <summary>
+            Elimina una biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.GetUser(GestionBibliotecas.Application.DTOs.Users.UserRequest)">
+            <summary>
+            Obtiene un miembro según filtro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.GetAllUsers">
+            <summary>
+            Obtiene todos los miembros.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.GetAllUsersByLibrary(System.Int32)">
+            <summary>
+            Obtiene todos los usuarios de una libreria.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.AddUser(GestionBibliotecas.Application.DTOs.Users.NewUserRequest)">
+            <summary>
+            Adiciona un miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.UpdateUser(System.Int32,GestionBibliotecas.Application.DTOs.Users.ModUserRequest)">
+            <summary>
+            Actualiza la información del miembro.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.UpdateLibraryUser(System.Int32,System.Int32)">
+            <summary>
+            Cambiar usuario de biblioteca.
+            </summary>
+        </member>
+        <member name="M:GestionBibliotecas.Domain.Interfaces.IUsers.DeleteUser(System.Int32)">
+            <summary>
+            Elimina un miembro.
+            </summary>
+        </member>
+    </members>
+</doc>

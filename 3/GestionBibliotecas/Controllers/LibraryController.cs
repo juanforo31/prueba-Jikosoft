@@ -1,5 +1,6 @@
 ﻿using GestionBibliotecas.Application.Bussiness;
 using GestionBibliotecas.Application.DTOs.Library;
+using GestionBibliotecas.Infrastructure.MemoryData;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,18 +14,19 @@ namespace GestionBibliotecas.Controllers
         // Se puede ver el Singleton implementado en Program.cs
 
         private readonly LibraryBO _library;
+        private readonly InMemoryDataStore _store;
 
-        public LibraryController(LibraryBO service)
+        public LibraryController(InMemoryDataStore store,LibraryBO library)
         {
-            _library = service;
+            _library = library;
+            _store = store;
         }
 
         /// <summary>
         /// Obtiene todas las bibliotecas.
         /// </summary>
-        /// <returns></returns>
         [HttpGet]
-        [Route("getLibraries")]
+        [Route("get-libraries")]
         public async Task<IActionResult> GetLibraries()
         {
             try
@@ -47,11 +49,10 @@ namespace GestionBibliotecas.Controllers
         }
 
         /// <summary>
-        /// Obtiene una biblioteca dad un filtro.
+        /// Obtiene una biblioteca dado un filtro.
         /// </summary>
-        /// <returns></returns>
         [HttpPost]
-        [Route("getLibrary")]
+        [Route("get-library")]
         public async Task<IActionResult> GetLibrary([FromBody] LibraryRequest libraryRequest)
         {
             try
@@ -79,9 +80,8 @@ namespace GestionBibliotecas.Controllers
         /// <summary>
         /// Añade una biblioteca.
         /// </summary>
-        /// <returns></returns>
         [HttpPost]
-        [Route("add")]
+        [Route("add-library")]
         public async Task<IActionResult> addLibrary([FromBody] NewLibraryRequest newlibraryRequest)
         {
             try
@@ -106,9 +106,8 @@ namespace GestionBibliotecas.Controllers
         /// <summary>
         /// modifica una biblioteca.
         /// </summary>
-        /// <returns></returns>
         [HttpPut]
-        [Route("updateLibrary/{libraryId}")]
+        [Route("update-library/{libraryId}")]
         public async Task<IActionResult> UpdateLibrary(int libraryId, [FromBody] ModLibraryRequest modLibraryRequest)
         {
             try
@@ -133,9 +132,8 @@ namespace GestionBibliotecas.Controllers
         /// <summary>
         /// Eliminar una biblioteca.
         /// </summary>
-        /// <returns></returns>
         [HttpDelete]
-        [Route("deleteLibrary/{libraryId}")]
+        [Route("delete-library/{libraryId}")]
         public async Task<IActionResult> DeleteLibrary(int libraryId)
         {
             try

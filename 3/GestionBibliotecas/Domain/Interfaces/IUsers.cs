@@ -4,29 +4,37 @@ namespace GestionBibliotecas.Domain.Interfaces
 {
     public interface IUsers
     {
+
         /// <summary>
         /// Obtiene un miembro según filtro.
         /// </summary>
-        UserResponse GetUser(UserRequest userRequest);
+        Task<(IEnumerable<UserResponse>, bool)> GetUser(UserRequest userRequest);
+
         /// <summary>
         /// Obtiene todos los miembros.
         /// </summary>
-        IEnumerable<UserResponse> GetAllUsers();
+        Task<IEnumerable<UserResponse>> GetAllUsers();
         /// <summary>
         /// Obtiene todos los usuarios de una libreria.
         /// </summary>
-        IEnumerable<UserResponse> GetAllUsersByLibrary(int libraryId);
+        Task<IEnumerable<UserResponse>> GetAllUsersByLibrary(int libraryId);
         /// <summary>
         /// Adiciona un miembro.
         /// </summary>
-        int AddUser(UserResponse book);
+        Task<int> AddUser(NewUserRequest newUserRequest);
         /// <summary>
         /// Actualiza la información del miembro.
         /// </summary>
-        void UpdateUser(UserResponse book);
+        Task<bool> UpdateUser(int userId, ModUserRequest modUserRequest);
+
+        /// <summary>
+        /// Cambiar usuario de biblioteca.
+        /// </summary>
+        Task<bool> UpdateLibraryUser(int userId, int libraryId);
+
         /// <summary>
         /// Elimina un miembro.
         /// </summary>
-        void DeleteUser(int id);
+        Task<bool> DeleteUser(int id);
     }
 }

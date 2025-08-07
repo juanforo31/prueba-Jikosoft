@@ -35,3 +35,5 @@ C:\Users\juand\OneDrive\Documentos\Personal OneDrive\Pruebas\prueba-Jikosoft\3\G
 C:\Users\juand\OneDrive\Documentos\Personal OneDrive\Pruebas\prueba-Jikosoft\3\GestionBibliotecas\obj\Debug\net8.0\GestionBibliotecas.pdb
 C:\Users\juand\OneDrive\Documentos\Personal OneDrive\Pruebas\prueba-Jikosoft\3\GestionBibliotecas\obj\Debug\net8.0\GestionBibliotecas.genruntimeconfig.cache
 C:\Users\juand\OneDrive\Documentos\Personal OneDrive\Pruebas\prueba-Jikosoft\3\GestionBibliotecas\obj\Debug\net8.0\ref\GestionBibliotecas.dll
+C:\Users\juand\OneDrive\Documentos\Personal OneDrive\Pruebas\prueba-Jikosoft\3\GestionBibliotecas\bin\Debug\net8.0\GestionBibliotecas.xml
+C:\Users\juand\OneDrive\Documentos\Personal OneDrive\Pruebas\prueba-Jikosoft\3\GestionBibliotecas\obj\Debug\net8.0\GestionBibliotecas.xml

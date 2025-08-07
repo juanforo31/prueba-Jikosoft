@@ -2,7 +2,7 @@
   {
     "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
     "Method": "addLibrary",
-    "RelativePath": "api/Library/add",
+    "RelativePath": "api/Library/add-library",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
     "Method": "DeleteLibrary",
-    "RelativePath": "api/Library/deleteLibrary/{libraryId}",
+    "RelativePath": "api/Library/delete-library/{libraryId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -34,7 +34,7 @@
   {
     "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
     "Method": "GetLibraries",
-    "RelativePath": "api/Library/getLibraries",
+    "RelativePath": "api/Library/get-libraries",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -44,7 +44,7 @@
   {
     "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
     "Method": "GetLibrary",
-    "RelativePath": "api/Library/getLibrary",
+    "RelativePath": "api/Library/get-library",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -60,7 +60,7 @@
   {
     "ContainingType": "GestionBibliotecas.Controllers.LibraryController",
     "Method": "UpdateLibrary",
-    "RelativePath": "api/Library/updateLibrary/{libraryId}",
+    "RelativePath": "api/Library/update-library/{libraryId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -73,6 +73,122 @@
       {
         "Name": "modLibraryRequest",
         "Type": "GestionBibliotecas.Application.DTOs.Library.ModLibraryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "addUser",
+    "RelativePath": "api/User/add-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUserRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Users.NewUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/User/delete-user/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "GetUsersByFilter",
+    "RelativePath": "api/User/get-user-filter",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Users.UserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "GetUsersByLibrary",
+    "RelativePath": "api/User/get-user-library",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/User/get-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "UpdateUserLibrary",
+    "RelativePath": "api/User/update-user-library/{userId}/{libraryId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "libraryId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GestionBibliotecas.Controllers.UserController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/User/update-user/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modUserRequest",
+        "Type": "GestionBibliotecas.Application.DTOs.Users.ModUserRequest",
         "IsRequired": true
       }
     ],

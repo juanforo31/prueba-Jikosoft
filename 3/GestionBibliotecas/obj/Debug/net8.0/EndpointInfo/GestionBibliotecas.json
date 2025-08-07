@@ -5,11 +5,12 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Library/getLibraries": {
+    "/api/Library/get-libraries": {
       "get": {
         "tags": [
           "Library"
         ],
+        "summary": "Obtiene todas las bibliotecas.",
         "responses": {
           "200": {
             "description": "OK"
@@ -17,11 +18,12 @@
         }
       }
     },
-    "/api/Library/getLibrary": {
+    "/api/Library/get-library": {
       "post": {
         "tags": [
           "Library"
         ],
+        "summary": "Obtiene una biblioteca dado un filtro.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -48,11 +50,12 @@
         }
       }
     },
-    "/api/Library/add": {
+    "/api/Library/add-library": {
       "post": {
         "tags": [
           "Library"
         ],
+        "summary": "Añade una biblioteca.",
         "requestBody": {
           "content": {
             "application/json": {
@@ -79,11 +82,12 @@
         }
       }
     },
-    "/api/Library/updateLibrary/{libraryId}": {
+    "/api/Library/update-library/{libraryId}": {
       "put": {
         "tags": [
           "Library"
         ],
+        "summary": "modifica una biblioteca.",
         "parameters": [
           {
             "name": "libraryId",
@@ -121,14 +125,215 @@
         }
       }
     },
-    "/api/Library/deleteLibrary/{libraryId}": {
+    "/api/Library/delete-library/{libraryId}": {
       "delete": {
         "tags": [
           "Library"
         ],
+        "summary": "Eliminar una biblioteca.",
         "parameters": [
           {
             "name": "libraryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/get-users": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Obtiene todos los miembros de todas las bibliotecas.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/get-user-filter": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Obtiene los miembros un dado un filtro.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/get-user-library": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Obtiene los miembros una biblioteca en específico.",
+        "parameters": [
+          {
+            "name": "libraryId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/add-user": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Añade un miembro.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/update-user/{userId}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "modifica un miembro.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModUserRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModUserRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ModUserRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/update-user-library/{userId}/{libraryId}": {
+      "put": {
+        "tags": [
+          "User"
+        ],
+        "summary": "modifica un la biblioteca de un miembro.",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "libraryId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/delete-user/{userId}": {
+      "delete": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Eliminar un miembro.",
+        "parameters": [
+          {
+            "name": "userId",
             "in": "path",
             "required": true,
             "schema": {
@@ -152,15 +357,18 @@
         "properties": {
           "libraryId": {
             "type": "integer",
+            "description": "Identifiacdor de la biblioteca.",
             "format": "int32",
             "nullable": true
           },
           "libraryName": {
             "type": "string",
+            "description": "Nombre de la biblioteca",
             "nullable": true
           },
           "address": {
             "type": "string",
+            "description": "Dirección de la biblioteca",
             "nullable": true
           }
         },
@@ -171,20 +379,50 @@
         "properties": {
           "libraryId": {
             "type": "integer",
+            "description": "Identifiacdor de la biblioteca.",
             "format": "int32",
             "nullable": true,
             "readOnly": true
           },
           "libraryName": {
             "type": "string",
+            "description": "Nombre de la biblioteca",
             "nullable": true
           },
           "address": {
             "type": "string",
+            "description": "Dirección de la biblioteca",
             "nullable": true
           },
           "city": {
             "type": "string",
+            "description": "Ciudad donde se encuentra la biblioteca.",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModUserRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "description": "Nombre del usuario.",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Apellido del usuario.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "Correo electrónico del usuario.",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Teléfono del usuario.",
             "nullable": true
           }
         },
@@ -195,15 +433,90 @@
         "properties": {
           "libraryName": {
             "type": "string",
+            "description": "Nombre de la biblioteca",
             "nullable": true
           },
           "address": {
             "type": "string",
+            "description": "Dirección de la biblioteca",
             "nullable": true
           },
           "city": {
             "type": "string",
+            "description": "Ciudad donde se encuentra la biblioteca.",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "NewUserRequest": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "description": "Nombre del usuario.",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Apellido del usuario.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "Correo electrónico del usuario.",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Teléfono del usuario.",
+            "nullable": true
+          },
+          "libraryId": {
+            "type": "integer",
+            "description": "Identifiacdor de la biblioteca.",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserRequest": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "description": "Identificador del usuario.",
+            "format": "int32"
+          },
+          "firstName": {
+            "type": "string",
+            "description": "Nombre del usuario.",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "description": "Apellido del usuario.",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "description": "Correo electrónico del usuario.",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "description": "Teléfono del usuario.",
+            "nullable": true
+          },
+          "libraryId": {
+            "type": "integer",
+            "description": "Identifiacdor de la biblioteca.",
+            "format": "int32"
+          },
+          "bookId": {
+            "type": "integer",
+            "description": "Identifiacdor del libro.",
+            "format": "int32"
           }
         },
         "additionalProperties": false
